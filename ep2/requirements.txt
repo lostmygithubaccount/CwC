@@ -1,0 +1,11 @@
+pydub
+numpy
+torch
+ipython
+#soundfile
+simpleaudio
+transformers
+
+neovim
+black
+

@@ -1,0 +1,26 @@
+# https://taskfile.dev
+version: '3'
+
+vars:
+  SIZE: large-v2
+
+tasks:
+  install:
+    cmds:
+      - pip install -r requirements.txt
+  download-shirkly-love:
+    cmds:
+      - youtube-dl -f best "https://www.youtube.com/watch?v=Xe1TZaElTAs"
+  download-mount-godot:
+    cmds:
+      - youtube-dl -f best "https://www.youtube.com/watch?v=1ddsl5nPfAc"
+  download-ted-godot:
+    cmds:
+      - youtube-dl -f best "https://www.youtube.com/watch?v=Cz5ey3RqDBI"
+  download-godot:
+    cmds:
+      - youtube-dl -f best "https://www.youtube.com/watch?v=izX5dIzI2RE"
+  run:
+    cmds:
+      - python run.py
+

@@ -1,0 +1,7 @@
+# https://taskfile.dev
+version: '3'
+
+tasks:
+  install:
+    cmds:
+      - pip install -r requirements.txt

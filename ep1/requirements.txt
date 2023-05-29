@@ -1,0 +1,35 @@
+# python
+wheel
+neovim
+ipython
+ipykernel
+python-dotenv
+
+# code
+black[jupyter]
+
+# ops
+dagster
+dagit
+
+# data
+fsspec
+adlfs
+dask
+distributed
+deltalake
+duckdb --pre
+polars[all]
+ibis-framework[polars,duckdb]
+
+# ml
+xgboost
+
+# viz
+matplotlib
+seaborn
+bokeh
+plotly
+
+# mlops
+mlflow

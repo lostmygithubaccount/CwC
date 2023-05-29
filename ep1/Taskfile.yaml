@@ -1,0 +1,38 @@
+# https://taskfile.dev
+
+version: '3'
+
+env:
+  MODULE: imdb_project
+
+tasks:
+  install:
+    cmds:
+      - pip install -r requirements.txt
+  dagster:
+    cmds:
+      - dagster dev -m {{.MODULE}}
+  dag:
+    cmds:
+      - task: dagster
+  job-all:
+    cmds:
+      - dagster job execute -j all_assets -m {{.MODULE}}
+  job:
+    cmds:
+      - task: job-all
+  job-bronze:
+    cmds:
+      - dagster job execute -j bronze_assets -m {{.MODULE}}
+  job-silver:
+    cmds:
+      - dagster job execute -j silver_assets -m {{.MODULE}}
+  job-gold:
+    cmds:
+      - dagster job execute -j gold_assets -m {{.MODULE}}
+  clean-parquet:
+    cmds:
+      - rm -r data/system/parquet
+  clean-delta:
+    cmds:
+      - rm -r data/system/delta
